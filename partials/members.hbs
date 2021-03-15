@@ -1,0 +1,49 @@
+{{#children inherited=undefined ~}}
+{{>heading-indent}}{{#if name}}{{#sig~}}
+{{{@depOpen}~}}
+{{{@codeOpen}~}}
+{{#if (isEvent)}}"{{{name}}}"{{else}}{{{escape name}}}{{/if~}}
+{{#if @methodSign}}{{#if (isEvent)}} {{@methodSign}}{{else}}{{@methodSign}}{{/if}}{{/if~}}
+{{{@codeClose}~}}
+{{#if @suffix}} {{@suffix}}{{/if~}}
+{{{@depClose}~}}
+{{~/sig}}{{/if}}
+{{>deprecated}}
+{{>description~}}
+{{>summary~}}
+{{>augments~}}
+{{>implements~}}
+{{>mixes~}}
+{{>default~}}
+{{>chainable~}}
+{{>overrides~}}
+{{#if returns}}
+**Returns**: {{#each returns~}}
+{{#if type~}}
+{{#if type.names}}{{>linked-type-list types=type.names delimiter=" \| " ~}}{{/if}}
+{{~#if description}} - {{{inlineLinks description}}}{{/if~}}
+{{else~}}
+{{{inlineLinks description}~}}
+{{/if~}}
+{{~/each}}
+{{/if}}
+{{>category~}}
+{{>throws~}}
+{{>fires~}}
+{{>this~}}
+{{>access~}}
+{{>readOnly~}}
+{{>requires~}}
+{{>customTags~}}
+{{>see~}}
+{{>since~}}
+{{>version~}}
+{{>authors~}}
+{{>license~}}
+{{>copyright~}}
+{{>todo~}}
+{{>params~}}
+{{>properties~}}
+{{>examples~}}
+{{>separator~}}
+{{/children~}}
